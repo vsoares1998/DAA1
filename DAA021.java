@@ -1,11 +1,11 @@
-import java.io.*;
+
 import java.util.*;
 
 
 public class DAA021{
   public static void main(String[] args){
     FastScanner stdin = new FastScanner(System.in);
-    TreeMap<Integer, Integer> map = new TreeMap<Integer, Integer>();
+    TreeMap<Integer, Integer> map = new TreeMap<>();
 
     int a = stdin.nextInt();
     int r = stdin.nextInt();
