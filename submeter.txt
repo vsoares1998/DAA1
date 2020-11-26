@@ -1,0 +1,1501 @@
+import java.util.Scanner;
+
+public class D001 {
+    public static void main(String[] args) {
+      Scanner in = new Scanner(System.in);
+      int count=0;
+      int n = in.nextInt();
+      for(int i=0; i<n; i++){
+        int s = in.nextInt();
+          if(s==42)
+            count++;
+      }
+      System.out.println(count);
+    }
+}
+
+--------------------------------------------
+
+import java.util.Scanner;
+
+public class D002 {
+  public static void main(String[] args){
+    Scanner in = new Scanner(System.in);
+    int n = in.nextInt();
+    int a = 0;
+    int total = 0;
+    for(int i=0;i<n;i++){
+      a=0;
+      int numero = in.nextInt();
+      int igualdade = in.nextInt();
+       while(a==0){
+         numero = numero + 1;
+         String leitura = String.valueOf(numero);
+         int tamanho = leitura.length();
+         total = 0;
+           for(int j=0;j<tamanho;j++){
+             int aux = Integer.parseInt(String.valueOf(leitura.charAt(j)));
+             total = total + aux;
+           }
+         if(total == igualdade){
+          System.out.println(leitura);
+          a=1;
+        }
+      }
+    }
+  }
+}
+
+
+---------------------------------------------
+
+import java.util.Scanner;
+
+public class D003{
+    public static void main(String[] args){
+      Scanner in = new Scanner(System.in);
+
+      int aux1=0;
+      int aux2=0;
+      int aux3=0;
+
+      long distancia = 0L;
+
+      int n = in.nextInt();
+
+      String Matricula = new String();
+
+      Matricula = in.next();
+
+      char parx1 = Matricula.charAt(0);
+      char parx2 = Matricula.charAt(1);
+
+      if(Character.isLetter(parx1))
+        aux1=1;
+
+      char pary1 = Matricula.charAt(3);
+      char pary2 = Matricula.charAt(4);
+
+      if(Character.isLetter(pary1))
+        aux2=1;
+
+      char parz1 = Matricula.charAt(6);
+      char parz2 = Matricula.charAt(7);
+
+      if(Character.isLetter(parz1))
+        aux3=1;
+
+      if(aux1==1 && aux3==0 ){
+        int x1 = Integer.parseInt(String.valueOf(Matricula.charAt(3)));
+        int x2 = Integer.parseInt(String.valueOf(Matricula.charAt(4)));
+        //x1 = x1*9;
+        //x2= x2*9;
+
+        char y1 = Matricula.charAt(0);
+        int pos1 = y1 - 'A';
+        System.out.println("pos1:" + pos1);
+        char y2 = Matricula.charAt(1);
+        int pos2 = y2 - 'A';
+        //pos1 = pos1*25;
+        //pos2 = pos2*25;
+
+
+
+
+        int z1 = Integer.parseInt(String.valueOf(Matricula.charAt(6)));
+        int z2 = Integer.parseInt(String.valueOf(Matricula.charAt(7)));
+        //z1=z1*9;
+        //z2=z2*9;
+
+
+        int total = z2 + z1*10 + x2*100 + x1*1000 + pos2* 10000 +  pos1* 100000;
+
+
+
+
+
+        distancia = total;
+
+        System.out.println(distancia);
+      }
+
+      if(aux2==1){
+        distancia = distancia + 10580000;
+        int x1 = Integer.parseInt(String.valueOf(Matricula.charAt(0)));
+        int x2 = Integer.parseInt(String.valueOf(Matricula.charAt(1)));
+        //x1 = x1 * 10;
+        //long x = x1 + x2;
+      //  x = x * 100;
+        //if(x==0)
+          //x=1;
+        //System.out.println("x:" + x);
+
+        char y1 = Matricula.charAt(3);
+        int pos1 = y1 - 'A';
+        char y2 = Matricula.charAt(4);
+        int pos2 = y2 - 'A';
+        //pos2 = pos2 * 23;
+        //long pos = pos2 + pos1;
+        //pos = pos * 10000;
+        //if(pos==0)
+          //pos=1;
+        //System.out.println("pos:" + pos);
+
+
+        int z1 = Integer.parseInt(String.valueOf(Matricula.charAt(6)));
+        int z2 = Integer.parseInt(String.valueOf(Matricula.charAt(7)));
+        //z1 = z1 * 10;
+        //long z = z2 + z1;
+        //if(z==0)
+          //z=1;
+        //System.out.println("z:" + z);
+
+        //long soma1 = 0L;
+        //soma1 = x*pos;
+        //System.out.println("soma1: " +soma1);
+        //long soma2 = 0L;
+        //soma2 = soma1 * z;
+        //System.out.println("soma2:" +soma2);
+
+
+
+        int total = z2 + z1*10 + x2*100 + x1*1000 + pos2* 10000 +  pos1* 100000;
+
+
+        distancia = distancia + total;
+
+        System.out.println(distancia);
+      }
+      if(aux3==1 && aux1==0){
+        distancia = distancia + 5290000 ;
+        int x1 = Integer.parseInt(String.valueOf(Matricula.charAt(0)));
+        int x2 = Integer.parseInt(String.valueOf(Matricula.charAt(1)));
+//        x1 = x1 * 10;
+  //      int x = x1 + x2;
+        //x = x * 100;
+    //    if(x==0)
+      //    x=1;
+
+        char y1 = Matricula.charAt(6);
+        int pos1 = y1 - 'A';
+
+        //System.out.println("pos1:"+pos1);
+        char y2 = Matricula.charAt(7);
+        int pos2 = y2 - 'A';
+        //System.out.println("pos2:"+pos2);
+        //pos2 = pos2 * 23;
+        //int pos = pos2 + pos1;
+        //pos = pos * 10000;
+        //if(pos==0)
+          //pos=1;
+
+
+        int z1 = Integer.parseInt(String.valueOf(Matricula.charAt(3)));
+        int z2 = Integer.parseInt(String.valueOf(Matricula.charAt(4)));
+        //z1 = z1 * 10;
+        //int z = z2 + z1;
+        //if(z==0)
+          //z=1;
+
+        //int soma1 = 0;
+        //soma1 = x*pos;
+        //System.out.println("soma1: " +soma1);
+        //int soma2 = 0;
+        //soma2 = soma1 * z;
+        //System.out.println("soma2:" +soma2);
+
+        int total = z2 + z1*10 + x2*100 + x1*1000 + pos2* 10000 +  pos1* 100000;
+
+
+        distancia = distancia + total;
+        System.out.println(distancia);
+      }
+
+      if(aux3==1 && aux1==1){
+        distancia = distancia + 15870000;
+
+        char x1 = Matricula.charAt(6);
+        int posx1 = x1 - 'A';
+        char x2 = Matricula.charAt(7);
+        int posx2 = x2 - 'A';
+        //posx2 = posx2 * 23;
+        //long posx = posx2 + posx1;
+        //posx = posx * 100;
+        //if(posx==0)
+          //posx=1;
+
+        char y1 = Matricula.charAt(0);
+        int pos1 = y1 - 'A';
+        char y2 = Matricula.charAt(1);
+        int pos2 = y2 - 'A';
+        //pos2 = pos2 * 23;
+        //long pos = pos2 + pos1;
+        //pos = pos * 10000;
+        //if(pos==0)
+          //pos=1;
+
+
+        int z1 = Integer.parseInt(String.valueOf(Matricula.charAt(3)));
+        int z2 = Integer.parseInt(String.valueOf(Matricula.charAt(4)));
+
+
+        //z1 = z1 * 10;
+        //long z = z2 + z1;
+        //if(z==0)
+          //z=1;
+
+        //long soma1 = 0L;
+        //soma1 = posx*pos;
+        //System.out.println("soma1: " +soma1);
+        //long soma2 = 0L;
+        //soma2 = soma1 * z;
+        //System.out.println("soma2:" +soma2);
+
+
+        int total = z2 + z1*10 + posx2*100 + posx1*1000 + pos2* 10000 +  pos1* 100000;
+
+        distancia = distancia + total;
+
+        System.out.println(distancia);
+      }
+
+
+    }
+}
+
+
+------------------------------------------------------------------------------
+
+public class D005 {
+  public static void main(String[] args){
+    FastScanner in = new FastScanner(System.in);
+
+    int n = in.nextInt();
+    int[] cartas = new int[n+1];
+    int[] somas = new int[n+1];
+
+    for(int i=1;i<=n;i++){
+      cartas[i] = in.nextInt();
+      if(i==1)
+        somas[i]=cartas[i];
+      else
+        somas[i]=somas[i-1] + cartas[i];
+    }
+
+    int f = in.nextInt();
+
+    for(int i=0;i<f;i++){
+      int a = in.nextInt();
+      int b = in.nextInt();
+      int soma = somas[b] - somas[a-1];
+      FastPrint.out.println(soma);
+    }
+    FastPrint.out.close();
+
+  }
+}
+
+--------------------------------------------------------------------------------
+
+import java.util.Scanner;
+
+public class D006 {
+  public static void main(String[] args){
+    Scanner in = new Scanner(System.in);
+
+    int n = in.nextInt();
+
+    for(i=0;i<n;i++){
+      int qx = in.nextInt();
+      int qy = in.nextInt();
+      int ql = in.nextInt();
+
+      int cx = in.nextInt();
+      int cy = in.nextInt();
+      int cr = in.nextInt();
+
+      int ax=qx;
+      int ay=qy;
+      int bx=ax + ql;
+      int bY=ay;
+      int cx=ax;
+      int cy=ay + ql;
+      int dx=bx;
+      int dy=cy;
+
+
+
+    }
+  }
+
+  public static int intersecao(){
+
+  }
+}
+
+----------------------------------------------------
+import java.util.Scanner;
+import java.lang.Math;
+
+public class D007 {
+  public static void main(String[] args){
+    FastScanner in = new FastScanner(System.in);
+
+    int n = in.nextInt();
+    int[] v = new int[n+1];
+
+    for(int i = 0; i<n; i++){
+      v[i]=in.nextInt();
+    }
+    FastPrint.out.println(sms(v,0,n-1));
+    FastPrint.out.close();
+
+  }
+
+
+      public static int sms(int[] v,int a, int b){
+        if(a==b)
+          return v[a];
+
+        int meio = (a+b) /2;
+
+
+        int best3=0;
+        int best1 = sms(v,a,meio);
+      //  System.out.println("best1: " + best1);
+        int best2 = sms(v,meio+1,b);
+      //  System.out.println("best2: " + best2);
+        int aux1=0;
+        int aux2=0;
+        int melhor1=0;
+        int melhor2=0;
+        int j = meio + 1;
+        for(int i=meio;i>=a;i--){
+          aux1 = aux1 + v[i];
+          if(aux1>melhor1) melhor1 = aux1;
+        }
+
+        for(int i=j;i<=b;i++){
+            aux2 = aux2 + v[i];
+            if(aux2>melhor2) melhor2 = aux2;
+        }
+        //System.out.println("melhor1: " + melhor1);
+      //  System.out.println("melhor2: " + melhor2);
+        best3 = melhor1 + melhor2;
+      //  System.out.println("best3: " + best3);
+        //int maximo1 = maximo(best1,best2);
+        return maximo(best1,best2,best3);
+
+      }
+
+      public static int maximo(int a, int b,int c){
+        if(c==0){
+          if(a>b) return a;
+          else return b;
+        }
+        else{
+          if(a>b) return maximo(a,c,0);
+          else return maximo (b,c,0);
+        }
+      }
+
+}
+ ---------------------------------------------------------
+
+import java.io.*;
+import java.util.*;
+
+class Person implements Comparable<Person> {
+    public int age;
+    public String name;
+
+    Person(int a, String n) {
+	     age = a;
+	      name = n;
+    }
+
+    // Definir como comparar dois elementos da classe Person
+    // compareTo e uma funcao que compara objecto com outro objecto "p"
+    // Esta funcao deve devolver:
+    //  - numero < 0 se objecto for menor que objecto "p"
+    //  - numero > 0 se objecto for maior que objecto "p"
+    //  - zero, se objecto for igual ao objecto "p"
+    @Override
+    public int compareTo(Person p) {
+	     if (age < p.age) return -1;
+	      if (age > p.age) return +1;
+	       return 0;
+    }
+}
+
+
+
+
+public class DAA009 {
+  public static void main(String[] args){
+    FastScanner in = new FastScanner(System.in);
+
+    int[] alfabeto = new int[27];
+    int[] leitura = new int[27];
+
+
+    String ADN = new String();
+    ADN = in.next();
+    int tamanho = ADN.length();
+    int n = 0;
+    for(int i = 0; i<tamanho; i++){
+
+      char aux = ADN.charAt(i);
+      int a = aux - 'A';
+      if (alfabeto[a]==0 ){
+        leitura[n]=a;
+        n++;
+      }
+      alfabeto[a] = alfabeto[a] + 1;
+
+    }
+
+    int j=0;
+    Person v[] = new Person[n];
+    for(int i=n-1;i>=0;i--){
+      int b = leitura[i];
+      int a = b + 65;
+      char aux1 = (char) a;
+      String aux=String.valueOf(aux1);
+      v[j] = new Person(alfabeto[b],aux);
+      j++;
+    }
+
+     Arrays.sort(v);
+
+   for (int i = j-1; i>=0; i--)
+	  System.out.println(v[i].name + " " + v[i].age);
+  }
+}
+
+-------------------------------------------------------------
+
+
+import java.util.*;
+
+
+public class DAA010{
+  public static int bsearch (int low,int high, int valor, int[] somas){
+    while(low < high){
+        int middle = low + (high - low)/2;
+
+        if(somas[middle]>=valor) high=middle;
+        else low=middle+1;
+
+    }
+    if(low == somas.length) return low-1;
+    return low;
+  }
+
+  public static void main(String[] args){
+    FastScanner stdin = new FastScanner(System.in);
+
+    int n = stdin.nextInt();
+    int[] numeros = new int[n+1];
+
+
+    for(int i=0;i<n;i++){
+      numeros[i] = stdin.nextInt();
+    }
+
+    int[] somas = new int[n*(n-1)/2];
+    int k=0;
+
+    for(int i=0;i<n;i++){
+      for(int j=i+1;j<n;j++){
+        somas[k]=numeros[i] + numeros[j];
+        //System.out.println(somas[k]);
+        k++;
+      }
+    }
+
+    Arrays.sort(somas);
+
+    int n_questoes = stdin.nextInt();
+    int[] questoes = new int[n_questoes+1];
+
+    for(int j=0;j<n_questoes;j++){
+      questoes[j]=stdin.nextInt();
+      int aux = bsearch(0,somas.length,questoes[j],somas);
+      if(aux == 0)
+        System.out.println(somas[aux]);
+      else{
+        int s1 = Math.abs(somas[aux] - questoes[j]);
+        int s2 = Math.abs(somas[aux - 1] - questoes[j]);
+
+        if(s1 == s2)
+            System.out.println(somas[aux - 1]+" "+somas[aux]);
+        else if(s1 < s2)
+            System.out.println(somas[aux]);
+        else
+            System.out.println(somas[aux - 1]);
+      }
+    }
+
+
+  }
+
+}
+
+
+-----------------------------------------------------
+import java.io.*;
+import java.util.*;
+
+
+public class DAA011{
+  public static int n = 0;
+  public static void main(String[] args){
+    FastScanner stdin = new FastScanner(System.in);
+
+    int n = stdin.nextInt();
+    int[] distancias = new int[n];
+    int maximo=0;
+
+    for (int i=0;i<n;i++){
+      distancias[i]=stdin.nextInt();
+      maximo = maximo + distancias[i];
+    }
+
+    int p = stdin.nextInt();
+    int last=0;
+    for(int j=0;j<p;j++){
+      int k = stdin.nextInt();
+      int aux = bsearch(0,maximo,k,distancias);
+      System.out.println(distancias[aux]);
+    }
+
+  }
+
+
+
+
+  public static int bsearch (int low,int high, int dias, int[] distancias){
+    while(low < high){
+      int middle = low + (high - low)/2;
+      if(e_possivel(middle,dias,distancias)==true){
+        high=middle;
+        System.out.println(">"+e_possivel(middle,dias,distancias));
+      }
+      else low=middle + 1;
+    }
+    if(e_possivel(low,dias,distancias)==false){
+        System.out.println(">>"+e_possivel(low,dias,distancias));
+       return low - 1;
+     }
+    return low;
+  }
+
+  public static Boolean e_possivel(int valor, int dias,int[] distancias){
+
+      int min = 0;
+      int divisoes = 0;
+      int soma = 0;
+
+      for(int i=0;i<n;i++){
+        soma = soma + distancias[i];
+        if(soma>valor){
+          divisoes++;
+          soma=0;
+          i--;
+        }
+        if(divisoes>dias) return false;
+      }
+      return true;
+
+  }
+
+
+}
+---------------------------------------------------------------
+// FastScanner
+// Pedro Ribeiro (DCC/FCUP)
+
+import java.io.*;
+import java.util.StringTokenizer;
+
+class FastScanner {
+    BufferedReader br;
+    StringTokenizer st;
+ 
+    public FastScanner(InputStream stream) {
+	br = new BufferedReader(new InputStreamReader(stream));
+    }
+ 
+    String next() {
+	while (st == null || !st.hasMoreElements()) {
+	    try {
+		st = new StringTokenizer(br.readLine());
+	    } catch (IOException e) {
+		e.printStackTrace();
+	    }
+	}
+	return st.nextToken();
+    }
+ 
+    int nextInt() {
+	return Integer.parseInt(next());
+    }
+ 
+    long nextLong() {
+	return Long.parseLong(next());
+    }
+ 
+    double nextDouble() {
+	return Double.parseDouble(next());
+    }
+ 
+    String nextLine(){
+	String str = "";
+	try {
+	    str = br.readLine();
+	} catch (IOException e) {
+	    e.printStackTrace();
+	}
+	return str;
+    }
+
+}
+---------------------------------------------------
+
+import java.io.*;
+import java.util.*;
+
+
+public class DAA011{
+  //public static int n = 0;
+  public static void main(String[] args){
+    FastScanner stdin = new FastScanner(System.in);
+
+    int n = stdin.nextInt();
+    int[] distancias = new int[n];
+    int maximo=0;
+
+    for (int i=0;i<n;i++){
+      distancias[i]=stdin.nextInt();
+      maximo += distancias[i];
+    }
+
+    int p = stdin.nextInt();
+    int [] arrayk = new int[p];
+    for(int j=0 ; j<p ; j++){
+        int k = stdin.nextInt();
+        int aux = bsearch(1,maximo,k,distancias);
+        System.out.println(aux);
+    }
+  }
+
+  public static int bsearch (int low,int high, int dias, int[] distancias){
+    while(low < high){
+       int  middle = low + (high - low)/2;
+      if(e_possivel(middle,dias,distancias)==true){
+        high=middle;
+      }
+      else{
+        low=middle + 1;
+      }
+    }
+    if(e_possivel(low,dias,distancias)==false){
+       return low - 1;
+     }
+    return low;
+  }
+
+  public static Boolean e_possivel(int valor, int dias,int[] distancias){
+      int divisoes = 0;
+      int soma = 0;
+
+      for(int i=0;i<distancias.length;i++){
+        soma = soma + distancias[i];
+        if(soma>valor){
+          divisoes++;
+          soma=0;
+          i--;
+        }
+        if(divisoes>=dias) return false;
+      }
+      return true;
+  }
+}
+
+
+-----------------------------------------------------------------------
+import java.io.*;
+import java.util.*;
+
+class Ponto implements Comparable<Ponto> {
+    int x, y;
+
+    public Ponto(int x, int y) {
+        this.x = x;
+        this.y = y;
+    }
+
+    @Override
+    public int compareTo(Ponto p) {
+        if (x < p.x)
+            return -1;
+        if (x > p.x)
+            return +1;
+        if (x == p.x)
+            if (y < p.y)
+                return +1;
+            else if (y > p.y)
+                return -1;
+
+        return 0;
+    }
+}
+
+
+public class DAA013{
+  public static void main(String[] args){
+    FastScanner stdin = new FastScanner(System.in);
+
+    int m = stdin.nextInt();
+
+    int n = stdin.nextInt();
+
+    Ponto[] ponto = new Ponto[n];
+
+
+    for(int i=0;i<n;i++){
+      ponto[i] = new Ponto(stdin.nextInt(),stdin.nextInt());
+    }
+
+    Arrays.sort(ponto);
+
+    int aux = golosa(ponto,n,m);
+
+    System.out.println(""+aux);
+
+  }
+
+public static int golosa(Ponto[] ponto,int n,int m){
+
+  int aux=0;
+  int conta=0;
+
+    while(aux < m){
+          int aux1 = maior(ponto,aux,n);
+          conta++;
+          aux=ponto[aux1].y;
+          //System.out.println(""+ ponto[aux1].x + " - " + ponto[aux1].y);
+    }
+    return conta;
+  }
+
+public static int maior(Ponto[] ponto,int aux,int n){
+
+  int tamanho = 0;
+  int aux1 = 0 ;
+  //System.out.println("tamanho: " + tamanho);
+  for(int i=0;i<n;i++){
+    if(ponto[i].x<=aux && ponto[i].y>aux){
+      if((ponto[i].y - aux) > tamanho){
+        tamanho = ponto[i].y - aux;
+        aux1=i;
+        //System.out.println("entrou -> " + ponto[i].x +"" + ponto[i].y);
+      }
+    }
+  }
+  //System.out.println("aux1  ->   "+ponto[aux1].x + "  -  " +ponto[aux1].y);
+  return aux1;
+
+}
+
+
+}
+
+------------------------------------------------------
+import java.io.*;
+import java.util.*;
+
+
+class Sapatos implements Comparable<Sapatos> {
+  double razao;
+  int ordem;
+
+  public Sapatos(int ordem,double razao){
+
+    this.razao = razao;
+    this.ordem = ordem;
+
+  }
+
+  @Override
+  public int compareTo(Sapatos p) {
+      if (razao < p.razao)
+          return +1;
+      if (razao > p.razao)
+          return -1;
+      return 0;
+  }
+
+}
+
+
+
+
+
+public class DAA014{
+  public static void main(String[] args){
+    FastScanner stdin = new FastScanner(System.in);
+
+    int n = stdin.nextInt();
+
+    double[] razao = new double[n+1];
+    Sapatos[] sapato = new Sapatos[n];
+
+    for(int i=0; i<n; i++){
+      double dia = stdin.nextInt();
+      double multa = stdin.nextInt();
+      razao[i] = multa/dia;
+      sapato[i] = new Sapatos(i,razao[i]);
+
+
+    }
+    Arrays.sort(sapato);
+    for(int i=0; i<n; i++){
+      int aux = sapato[i].ordem + 1;
+      if(i==0)
+        System.out.print("" + aux);
+      else
+        System.out.print(" " + aux);
+
+    }
+    System.out.println();
+  }
+}
+
+---------------------------------------------
+
+
+
+import java.util.*;
+
+class daa017{
+	public static void main(String[] args){
+		FastScanner stdin = new FastScanner(System.in);
+		int n = stdin.nextInt();
+		long[][] piramide = new long[n][n];
+		int d = stdin.nextInt();
+
+		for(int i=0;i<n;i++)
+			for(int  j=0;j<=i;j++)
+				piramide[i][j] = 0;
+
+		piramide[0][0] = 1;
+
+		for(int i=0;i<d;i++){
+			int ci = stdin.nextInt();
+			int pi = stdin.nextInt();
+			piramide[n-ci][pi-1] = -1;
+		}
+
+		for(int i=1;i<n;i++){
+			for(int j=0;j<=i;j++){
+				if(piramide[i][j]!=-1){
+					if(i-1>=j && piramide[i-1][j]!=-1)
+						piramide[i][j] += piramide[i-1][j];
+					if(j-1>=0 && piramide[i-1][j-1]!=-1)
+						piramide[i][j] += piramide[i-1][j-1];
+				}
+			}
+		}
+
+		long soma = 0;
+		for(int j=0;j<=n-1;j++)
+			if(piramide[n-1][j]!=-1)
+				soma += piramide[n-1][j];
+		System.out.println(soma);
+	}
+}
+
+----------------------------------------------------------
+
+
+
+import java.util.*;
+
+class daa018{
+	public static void main(String[] args){
+		FastScanner stdin = new FastScanner(System.in);
+		int n = stdin.nextInt();
+		int[] moedas = new int[n];
+		for(int i=0;i<n;i++)
+			moedas[i] = stdin.nextInt();
+		int p = stdin.nextInt();
+		for(int i=0;i<p;i++){
+			int quantia = stdin.nextInt();
+			int[] num =  new int[quantia+1];
+			int[] used = new int[quantia+1];
+
+			num[0] = 0;
+			used[0] = 0;
+
+			for(int j=1;j<=quantia;j++){
+				num[j] = Integer.MAX_VALUE;
+				for(int moeda: moedas){
+					if(moeda <= j && 1 + num[j - moeda] < num[j]){
+						num[j] = 1 + num[j - moeda];
+						used[j] = moeda;
+					}
+				}
+			}
+
+			System.out.print(quantia+": ["+num[quantia]+"]");
+			while(used[quantia]!=0){
+				System.out.print(" "+used[quantia]);
+				quantia = quantia - used[quantia];
+			}
+			System.out.println();
+		}
+	}	
+}
+
+00000000000000000000000000000000000000000000000000000000000000
+import java.io.*;
+import java.util.*;
+
+
+class Sapatos implements Comparable<Sapatos> {
+  double razao;
+  int ordem;
+
+  public Sapatos(int ordem,double razao){
+
+    this.razao = razao;
+    this.ordem = ordem;
+
+  }
+
+  @Override
+  public int compareTo(Sapatos p) {
+      if (razao < p.razao)
+          return +1;
+      if (razao > p.razao)
+          return -1;
+      return 0;
+  }
+
+}
+
+
+
+
+
+public class DAA014{
+  public static void main(String[] args){
+    FastScanner stdin = new FastScanner(System.in);
+
+    int n = stdin.nextInt();
+
+    double[] razao = new double[n+1];
+    Sapatos[] sapato = new Sapatos[n];
+
+    for(int i=0; i<n; i++){
+      double dia = stdin.nextInt();
+      double multa = stdin.nextInt();
+      razao[i] = multa/dia;
+      sapato[i] = new Sapatos(i,razao[i]);
+
+
+    }
+    Arrays.sort(sapato);
+    for(int i=0; i<n; i++){
+      int aux = sapato[i].ordem + 1;
+      if(i==0)
+        System.out.print("" + aux);
+      else
+        System.out.print(" " + aux);
+
+    }
+    System.out.println();
+  }
+}
+
+
+-----------------------------------------------
+import java.io.*;
+import java.util.*;
+
+class Ponto implements Comparable<Ponto> {
+    int x, y;
+
+    public Ponto(int x, int y) {
+        this.x = x;
+        this.y = y;
+    }
+
+    @Override
+    public int compareTo(Ponto p) {
+        if (x < p.x)
+            return -1;
+        if (x > p.x)
+            return +1;
+        if (x == p.x)
+            if (y < p.y)
+                return +1;
+            else if (y > p.y)
+                return -1;
+
+        return 0;
+    }
+}
+
+
+public class DAA013{
+  public static void main(String[] args){
+    FastScanner stdin = new FastScanner(System.in);
+
+    int m = stdin.nextInt();
+
+    int n = stdin.nextInt();
+
+    Ponto[] ponto = new Ponto[n];
+
+
+    for(int i=0;i<n;i++){
+      ponto[i] = new Ponto(stdin.nextInt(),stdin.nextInt());
+    }
+
+    Arrays.sort(ponto);
+
+    int aux = golosa(ponto,n,m);
+
+    System.out.println(""+aux);
+
+  }
+
+public static int golosa(Ponto[] ponto,int n,int m){
+
+  int aux=0;
+  int conta=0;
+
+    while(aux < m){
+          int aux1 = maior(ponto,aux,n);
+          conta++;
+          aux=ponto[aux1].y;
+          //System.out.println(""+ ponto[aux1].x + " - " + ponto[aux1].y);
+    }
+    return conta;
+  }
+
+public static int maior(Ponto[] ponto,int aux,int n){
+
+  int tamanho = 0;
+  int aux1 = 0 ;
+  //System.out.println("tamanho: " + tamanho);
+  for(int i=0;i<n;i++){
+    if(ponto[i].x<=aux && ponto[i].y>aux){
+      if((ponto[i].y - aux) > tamanho){
+        tamanho = ponto[i].y - aux;
+        aux1=i;
+        //System.out.println("entrou -> " + ponto[i].x +"" + ponto[i].y);
+      }
+    }
+  }
+  //System.out.println("aux1  ->   "+ponto[aux1].x + "  -  " +ponto[aux1].y);
+  return aux1;
+
+}
+
+
+}
+----------------------------------------------------------------------------
+import java.io.*;
+import java.util.*;
+
+class Person implements Comparable<Person> {
+    public int age;
+    public String name;
+
+    Person(int a, String n) {
+	     age = a;
+	      name = n;
+    }
+
+    // Definir como comparar dois elementos da classe Person
+    // compareTo e uma funcao que compara objecto com outro objecto "p"
+    // Esta funcao deve devolver:
+    //  - numero < 0 se objecto for menor que objecto "p"
+    //  - numero > 0 se objecto for maior que objecto "p"
+    //  - zero, se objecto for igual ao objecto "p"
+    @Override
+    public int compareTo(Person p) {
+	     if (age < p.age) return -1;
+	      if (age > p.age) return +1;
+	       return 0;
+    }
+}
+
+
+
+
+public class DAA009 {
+  public static void main(String[] args){
+    FastScanner in = new FastScanner(System.in);
+
+    int[] alfabeto = new int[27];
+    int[] leitura = new int[27];
+
+
+    String ADN = new String();
+    ADN = in.next();
+    int tamanho = ADN.length();
+    int n = 0;
+    for(int i = 0; i<tamanho; i++){
+
+      char aux = ADN.charAt(i);
+      int a = aux - 'A';
+      if (alfabeto[a]==0 ){
+        leitura[n]=a;
+        n++;
+      }
+      alfabeto[a] = alfabeto[a] + 1;
+
+    }
+
+    int j=0;
+    Person v[] = new Person[n];
+    for(int i=n-1;i>=0;i--){
+      int b = leitura[i];
+      int a = b + 65;
+      char aux1 = (char) a;
+      String aux=String.valueOf(aux1);
+      v[j] = new Person(alfabeto[b],aux);
+      j++;
+    }
+
+     Arrays.sort(v);
+
+   for (int i = j-1; i>=0; i--)
+	  System.out.println(v[i].name + " " + v[i].age);
+  }
+}
+
+------------------------------------------------------
+import java.util.*;
+
+
+public class DAA010{
+  public static int bsearch (int low,int high, int valor, int[] somas){
+    while(low < high){
+        int middle = low + (high - low)/2;
+
+        if(somas[middle]>=valor) high=middle;
+        else low=middle+1;
+
+    }
+    if(low == somas.length) return low-1;
+    return low;
+  }
+
+  public static void main(String[] args){
+    FastScanner stdin = new FastScanner(System.in);
+
+    int n = stdin.nextInt();
+    int[] numeros = new int[n+1];
+
+
+    for(int i=0;i<n;i++){
+      numeros[i] = stdin.nextInt();
+    }
+
+    int[] somas = new int[n*(n-1)/2];
+    int k=0;
+
+    for(int i=0;i<n;i++){
+      for(int j=i+1;j<n;j++){
+        somas[k]=numeros[i] + numeros[j];
+        //System.out.println(somas[k]);
+        k++;
+      }
+    }
+
+    Arrays.sort(somas);
+
+    int n_questoes = stdin.nextInt();
+    int[] questoes = new int[n_questoes+1];
+
+    for(int j=0;j<n_questoes;j++){
+      questoes[j]=stdin.nextInt();
+      int aux = bsearch(0,somas.length,questoes[j],somas);
+      if(aux == 0)
+        System.out.println(somas[aux]);
+      else{
+        int s1 = Math.abs(somas[aux] - questoes[j]);
+        int s2 = Math.abs(somas[aux - 1] - questoes[j]);
+
+        if(s1 == s2)
+            System.out.println(somas[aux - 1]+" "+somas[aux]);
+        else if(s1 < s2)
+            System.out.println(somas[aux]);
+        else
+            System.out.println(somas[aux - 1]);
+      }
+    }
+
+
+  }
+
+}
+
+----------------------------------------------------
+
+import java.io.*;
+import java.util.*;
+
+
+public class DAA011{
+  //public static int n = 0;
+  public static void main(String[] args){
+    FastScanner stdin = new FastScanner(System.in);
+
+    int n = stdin.nextInt();
+    int[] distancias = new int[n];
+    int maximo=0;
+
+    for (int i=0;i<n;i++){
+      distancias[i]=stdin.nextInt();
+      maximo += distancias[i];
+    }
+
+    int p = stdin.nextInt();
+    int [] arrayk = new int[p];
+    for(int j=0 ; j<p ; j++){
+        int k = stdin.nextInt();
+        int aux = bsearch(1,maximo,k,distancias);
+        System.out.println(aux);
+    }
+  }
+
+  public static int bsearch (int low,int high, int dias, int[] distancias){
+    while(low < high){
+       int  middle = low + (high - low)/2;
+      if(e_possivel(middle,dias,distancias)==true){
+        high=middle;
+      }
+      else{
+        low=middle + 1;
+      }
+    }
+    if(e_possivel(low,dias,distancias)==false){
+       return low - 1;
+     }
+    return low;
+  }
+
+  public static Boolean e_possivel(int valor, int dias,int[] distancias){
+      int divisoes = 0;
+      int soma = 0;
+
+      for(int i=0;i<distancias.length;i++){
+        soma = soma + distancias[i];
+        if(soma>valor){
+          divisoes++;
+          soma=0;
+          i--;
+        }
+        if(divisoes>=dias) return false;
+      }
+      return true;
+  }
+}
+
+
+------------------------------------------------------------
+import java.util.Scanner;
+import java.lang.Math;
+
+public class D007 {
+  public static void main(String[] args){
+    FastScanner in = new FastScanner(System.in);
+
+    int n = in.nextInt();
+    int[] v = new int[n+1];
+
+    for(int i = 0; i<n; i++){
+      v[i]=in.nextInt();
+    }
+    FastPrint.out.println(sms(v,0,n-1));
+    FastPrint.out.close();
+
+  }
+
+
+      public static int sms(int[] v,int a, int b){
+        if(a==b)
+          return v[a];
+
+        int meio = (a+b) /2;
+
+
+        int best3=0;
+        int best1 = sms(v,a,meio);
+      //  System.out.println("best1: " + best1);
+        int best2 = sms(v,meio+1,b);
+      //  System.out.println("best2: " + best2);
+        int aux1=0;
+        int aux2=0;
+        int melhor1=0;
+        int melhor2=0;
+        int j = meio + 1;
+        for(int i=meio;i>=a;i--){
+          aux1 = aux1 + v[i];
+          if(aux1>melhor1) melhor1 = aux1;
+        }
+
+        for(int i=j;i<=b;i++){
+            aux2 = aux2 + v[i];
+            if(aux2>melhor2) melhor2 = aux2;
+        }
+        //System.out.println("melhor1: " + melhor1);
+      //  System.out.println("melhor2: " + melhor2);
+        best3 = melhor1 + melhor2;
+      //  System.out.println("best3: " + best3);
+        //int maximo1 = maximo(best1,best2);
+        return maximo(best1,best2,best3);
+
+      }
+
+      public static int maximo(int a, int b,int c){
+        if(c==0){
+          if(a>b) return a;
+          else return b;
+        }
+        else{
+          if(a>b) return maximo(a,c,0);
+          else return maximo (b,c,0);
+        }
+      }
+
+}
+--------------------------------
+
+
+import java.io.*;
+import java.util.*;
+
+public class DAA017{
+  public static void main(String[] args){
+    FastScanner stdin = new FastScanner(System.in);
+
+
+    int n = stdin.nextInt(); //numero de andares
+
+    int d = stdin.nextInt(); //numero de pedras detioradas
+
+    int[][] piramide = new int[n+1][n+1];
+
+
+    for(int i=0;i<d;i++){
+      int a = stdin.nextInt();
+      int b = stdin.nextInt();
+      piramide[n-a][b-1] = -1;//***
+    }
+
+    System.out.println(""+caminhos_possiveis(piramide,n));
+
+
+  }
+
+  public static long caminhos_possiveis(int[][] piramide,int n){
+
+    long[][] count= new long[n+1][n+1];
+    count[0][0] = 1;
+
+    for(int i = 1; i<n ;i++){//---
+      for(int j=0; j<=i ;j++){//---
+        if(piramide[i][j]!=-1){
+          if(i-1>=j && piramide[i-1][j] != -1)
+            count[i][j] = count[i][j] + count[i-1][j];
+          if(j-1>=0 && piramide[i-1][j-1] != -1)
+            count[i][j] = count[i][j] + count[i-1][j-1];
+          }
+      }
+    }
+
+    long soma = 0;
+		for(int j=0;j<n;j++)
+				soma = soma + count[n-1][j];
+
+    return soma;
+
+
+  }
+}
+
+009 014 013
+010 011
+017 018
+
+
+import java.io.*;
+import java.util.*;
+
+public class DAA018{
+
+  public static void main(String[] args){
+    FastScanner stdin = new FastScanner(System.in);
+
+    int n = stdin.nextInt();
+
+    int[] moedas = new int[n];
+
+    for(int i=0;i<n;i++){
+      moedas[i]=stdin.nextInt();
+    }
+
+    int p = stdin.nextInt();
+
+    for(int k=0;k<p;k++){
+      int valor = stdin.nextInt();
+
+      //funçao moedas
+      int[] caminho = new int[valor+1];
+      int[] coins = new int[valor+1];
+      coins[0]=0;
+      caminho[0]=0;
+
+      //este j igual ao i d moedas
+
+      for(int i=1;i<=valor;i++){
+        coins[i]=Integer.MAX_VALUE;
+        for(int j=0;j<n;j++){
+          if(moedas[j]<=i && 1 + coins[i-moedas[j]] < coins[i]){
+            coins[i] = 1 + coins[i - moedas[j]];
+            caminho[i] = moedas[j];
+          }
+        }
+      }
+
+
+      System.out.print(valor+": ["+ coins[valor] +"]");
+
+      while(caminho[valor]!=0){
+        System.out.print(" " + caminho[valor]);
+        valor = valor - caminho[valor];
+      }
+      System.out.println();
+
+
+    }
+  }
+
+
+
+
+}
+
+
+/*
+  caminho é a primeira moeda a ser tirada depois subtraimos ao valor para saber o proximo passo
+  
+*/
