@@ -1,7 +1,7 @@
 
 import java.util.*;
 
-
+/*tetset*/
 public class DAA021{
   public static void main(String[] args){
     FastScanner stdin = new FastScanner(System.in);
