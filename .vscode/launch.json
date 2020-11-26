@@ -1,0 +1,77 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Debug (Launch) - Current File",
+            "request": "launch",
+            "mainClass": "${file}"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-D001<DAA_cde6e508>",
+            "request": "launch",
+            "mainClass": "D001",
+            "projectName": "DAA_cde6e508"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-D002<DAA_cde6e508>",
+            "request": "launch",
+            "mainClass": "D002",
+            "projectName": "DAA_cde6e508"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-D003<DAA_cde6e508>",
+            "request": "launch",
+            "mainClass": "D003",
+            "projectName": "DAA_cde6e508"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-DAA011<DAA_cde6e508>",
+            "request": "launch",
+            "mainClass": "DAA011",
+            "projectName": "DAA_cde6e508"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-DAA013<DAA_cde6e508>",
+            "request": "launch",
+            "mainClass": "DAA013",
+            "projectName": "DAA_cde6e508"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-DAA014<DAA_cde6e508>",
+            "request": "launch",
+            "mainClass": "DAA014",
+            "projectName": "DAA_cde6e508"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-DAA017<DAA_cde6e508>",
+            "request": "launch",
+            "mainClass": "DAA017",
+            "projectName": "DAA_cde6e508"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-DAA018<DAA_cde6e508>",
+            "request": "launch",
+            "mainClass": "DAA018",
+            "projectName": "DAA_cde6e508"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-DAA021<DAA_cde6e508>",
+            "request": "launch",
+            "mainClass": "DAA021",
+            "projectName": "DAA_cde6e508"
+        }
+    ]
+}
