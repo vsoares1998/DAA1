@@ -24,7 +24,6 @@ public class DAA026 {
 
 
     }
-    
     public static void main(String args[]) {
 
 	Scanner stdin = new Scanner(System.in);
