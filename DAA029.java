@@ -3,7 +3,6 @@ import java.io.*;
 
 public class DAA029 {
     static boolean adj[][];   
-    static int count;
     static  ArrayList<Integer> lista;
     static int[] nos;
     static boolean visited[]; 
@@ -25,35 +24,40 @@ public class DAA029 {
         adj = new boolean[101][101];
         lista = new ArrayList<Integer>();
         nos = new int[27];
+        
         String aux;
+        String aux2;
 
-        count=0;
+        aux = stdin.nextLine();
 
-        for(int i=0;i<n;i++){
-            aux = stdin.nextLine();
+        for(int i=0;i<n-1;i++){
+            aux2 = stdin.nextLine();
+
             int number = aux.length();
          
-            for(int k=0;k<number-1;k++){
+            for(int k=0;k<number;k++){
                 int a = aux.charAt(k);
-                int b = aux.charAt(k+1);
+                int b = aux2.charAt(k);
                 a=a-'A';
                 b=b-'A';
-                if(nos[a]!=1)
-                    count++;
-                if(nos[b]!=1)
-                    count++;
                 nos[a]=1;
                 nos[b]=1;
-                adj[a][b] = true;
+
+                if(a!=b){
+                    adj[a][b] = true;
+                    break;
+                }
             }
+            aux=aux2;
         }
 
         visited = new boolean[27];	
 
-        for(int i=1;i<=26;i++){
-            if(nos[i]==1)
+        for(int i=0;i<=26;i++){
+            if(nos[i]==1){
                 if(!visited[i])
                     dfs(i);
+            }
         }
 
         int tamanho = lista.size();
@@ -62,5 +66,6 @@ public class DAA029 {
             char a = (char)a1;
             System.out.print(a);
         }
+        System.out.println();
     }
 }
